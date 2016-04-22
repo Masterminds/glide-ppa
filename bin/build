@@ -12,6 +12,9 @@ getGox() {
 getGox
 set -e
 cd glide/debian
+mkdir -p i386
+mkdir -p amd64
+mkdir -p release
 rm -Rf $SRC
 git clone git@github.com:franciscocpg/glide.git $SRC
 cd $SRC
