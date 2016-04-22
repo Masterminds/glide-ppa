@@ -1,0 +1,4 @@
+set -e
+cd glide
+pbuilder-dist trusty build ../glide_0.10.2.dsc
+cd -
