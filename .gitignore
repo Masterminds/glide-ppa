@@ -1,3 +1,4 @@
+.DS_Store
 glide_*
 glide/debian/release
 **/debian/i386/glide

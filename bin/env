@@ -1,6 +1,6 @@
-DISTS="trusty"
+DISTS="precise wily"
 VERSION_FILE=".version"
-VERSION_NUMBER=$(cat $VERSION_FILE) || "0"
+VERSION_NUMBER=$(cat $VERSION_FILE || echo "0") 
 
 fail() {
 	echo "$1"
@@ -11,3 +11,10 @@ fail() {
 if [[ -z "$DISTS" ]]; then
 	fail "DISTS cannot be empty"
 fi
+
+set -e
+# Test if directories exists
+for dist in $DISTS; do
+	cd $dist
+	cd ..
+done

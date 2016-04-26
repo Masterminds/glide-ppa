@@ -1,7 +1,9 @@
+#!/bin/bash
+clear
+
 # source env
 . bin/env
-VERSION=$(cat $VERSION_FILE)
 
 for dist in $DISTS; do
-	dput ppa:masterminds/glide $dist/glide_0.10.2_source.changes
+	dput ppa:masterminds/glide "$dist/glide_$VERSION_NUMBER_source.changes"
 done
