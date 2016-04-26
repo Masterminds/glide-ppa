@@ -1,6 +1,12 @@
 #!/bin/bash
 clear
 SRC="$GOPATH/src/github.com/Masterminds/glide"
+. bin/env
+
+if [[ -z "$DISTS" ]]; then
+	echo "DISTS cannot be empty"
+	exit 1
+fi
 
 getGox() {
 	GOX=$(which gox)
@@ -12,10 +18,6 @@ getGox() {
 
 getGox
 set -e
-cd glide/debian
-mkdir -p i386
-mkdir -p amd64
-mkdir -p release
 rm -Rf $SRC
 git clone git@github.com:franciscocpg/glide.git $SRC
 cd $SRC
@@ -27,8 +29,16 @@ echo "Getting needed packages..."
 go get -u github.com/codegangsta/cli github.com/Masterminds/semver github.com/Masterminds/vcs gopkg.in/yaml.v2
 gox -verbose -ldflags "-X main.version=${VERSION}" -os="linux" -arch="amd64 386" -output="dist/{{.OS}}-{{.Arch}}/glide" .
 cd -
-cp $SRC/dist/linux-386/glide i386/
-cp $SRC/dist/linux-amd64/glide amd64/
-cd ..
-dch -v "${VERSION}" -D trusty -u low "Release ${VERSION}"
-debuild -S -sa
+
+for dist in $DISTS; do
+	cd $DISTS/debian
+	mkdir -p i386
+	mkdir -p amd64
+	mkdir -p release
+	cp $SRC/dist/linux-386/glide i386/
+	cp $SRC/dist/linux-amd64/glide amd64/
+	cd ..
+	dch -v "${VERSION}" -D "$DISTS" -u low "Release ${VERSION}"
+	debuild -S -sa
+	mv ../glide_* .
+done

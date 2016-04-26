@@ -1,4 +1,4 @@
 glide_*
 glide/debian/release
-glide/debian/i386/glide
-glide/debian/amd64/glide
+**/debian/i386/glide
+**/debian/amd64/glide
