@@ -62,10 +62,11 @@ export PATH=${PATH}:$GOPATH/bin
 13.  Don't forget to run `source ~/.bashrc`or to restart your terminal 
 
 ## Running
-With all set do the following steps:
-1. Run the above command to keep your gpg key cached for 600 seconds in your current session (according to this [doc](https://www.gnupg.org/documentation/manuals/gnupg/Agent-Options.html))
+With all set do the following steps:  
+
+1. Run the above command to keep your gpg key cached for 600 seconds in your current session (according to this [doc](https://www.gnupg.org/documentation/manuals/gnupg/Agent-Options.html), see **--default-cache-ttl** option)
 
  ```
 eval $(gpg-agent --daemon)
 ```
-2. Run `make dist`. If everything is fine this is going to build and dist for every distribution informed at the [env](bin/env) file.
+2. Run `make dist`. If everything is fine this is going to build and dist for every distribution informed at the [env](bin/env) file (**DISTS** variable).
