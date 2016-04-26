@@ -1,1 +1,13 @@
 DISTS="trusty"
+VERSION_FILE=".version"
+VERSION_NUMBER=$(cat $VERSION_FILE) || "0"
+
+fail() {
+	echo "$1"
+	exit 1
+}
+
+# Dists must not be empty
+if [[ -z "$DISTS" ]]; then
+	fail "DISTS cannot be empty"
+fi

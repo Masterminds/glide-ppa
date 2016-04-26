@@ -1,1 +1,7 @@
-dput ppa:masterminds/glide glide_0.10.2_source.changes
+# source env
+. bin/env
+VERSION=$(cat $VERSION_FILE)
+
+for dist in $DISTS; do
+	dput ppa:masterminds/glide $dist/glide_0.10.2_source.changes
+done
