@@ -2,15 +2,14 @@
 ## Pre requisites
 1. Generate a **gpg key** following these [instructions](https://gist.github.com/franciscocpg/1575d286548034113884c3185ca88681)
 2. List the generated key
-
-```
-gpg --list-keys
-/home/ubuntu/.gnupg/pubring.gpg
--------------------------------
-pub   2048R/89E37042 2016-04-26
-uid                  Test <test@test.com>
-sub   2048R/92C63808 2016-04-26
-```
+      ```
+      gpg --list-keys
+      /home/ubuntu/.gnupg/pubring.gpg
+      -------------------------------
+      pub   2048R/89E37042 2016-04-26
+      uid                  Test <test@test.com>
+      sub   2048R/92C63808 2016-04-26
+      ```
 3. Send key to ubuntu keyserver based on the **pub** id, for the given example
 ```
 gpg --send-keys --key hkp://keyserver.ubuntu.com 89E37042
