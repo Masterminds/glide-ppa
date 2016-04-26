@@ -1,5 +1,8 @@
 # glide-ppa
 ## Pre requisites
+### First of all, you need a ubuntu box. You can get one, for example, with vagrant  
+`vagrant init ubuntu/trusty64; vagrant up --provider virtualbox`
+
 1. Generate a **gpg key** following these [instructions](https://gist.github.com/franciscocpg/1575d286548034113884c3185ca88681)
 2. List the generated key
 
@@ -42,4 +45,16 @@ sudo apt-get install packaging-dev
 export DEBFULLNAME="Test" 
 export DEBEMAIL="test@test.com"
 ```
-11.  Don't forget to run `source ~/.bashrc`or to restart your terminal 
+11. Install go
+
+ ```
+sudo apt-get install golang-go
+mkdir $HOME/go
+```
+12. Again, edit your ~/.bashrc file and add **GOPATH** and **BIN** to **PATH** 
+
+ ```
+export GOPATH="$HOME/go"
+export PATH=${PATH}:$GOPATH/bin
+```
+13.  Don't forget to run `source ~/.bashrc`or to restart your terminal 
