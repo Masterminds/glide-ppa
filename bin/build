@@ -1,5 +1,6 @@
 #!/bin/bash
-SRC="src"
+clear
+SRC="$GOPATH/src/github.com/Masterminds/glide"
 
 getGox() {
 	GOX=$(which gox)
@@ -19,9 +20,15 @@ rm -Rf $SRC
 git clone git@github.com:franciscocpg/glide.git $SRC
 cd $SRC
 VERSION=$(git describe --abbrev=0 --tags)
-git checkout "${VERSION}"
+git fetch origin ${VERSION}:${VERSION}
+git checkout ${VERSION}
+git rev-parse --abbrev-ref HEAD
+echo "Getting needed packages..."
+go get -u github.com/codegangsta/cli github.com/Masterminds/semver github.com/Masterminds/vcs gopkg.in/yaml.v2
 gox -verbose -ldflags "-X main.version=${VERSION}" -os="linux" -arch="amd64 386" -output="dist/{{.OS}}-{{.Arch}}/glide" .
-cp dist/linux-386/glide ../i386
-cp dist/linux-amd64/glide ../amd64
-cd ../../
+cd -
+cp $SRC/dist/linux-386/glide i386/
+cp $SRC/dist/linux-amd64/glide amd64/
+cd ..
+dch -v "${VERSION}" -D trusty -u low "Release ${VERSION}"
 debuild -S -sa
