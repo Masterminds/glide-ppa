@@ -4,8 +4,10 @@ clear
 # source env
 . bin/env
 
+set -e
+
 for dist in $DISTS; do
-	dput ppa:masterminds/glide "$dist/glide_${VERSION_NUMBER}_source.changes"
+	dput ppa:masterminds/glide "$dist/glide_${VERSION_NUMBER}~${dist}_source.changes"
 done
 
 git add .

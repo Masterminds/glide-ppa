@@ -48,7 +48,7 @@ copy() {
 		cp $SRC/dist/linux-386/glide i386/
 		cp $SRC/dist/linux-amd64/glide amd64/
 		cd ..
-		dch -v "${VERSION}" -D "$dist" -u low "Release ${VERSION}"
+		dch -v "${VERSION}~$dist" -D "$dist" -u low "Release ${VERSION}~$dist"
 		rm -f glide_*
 		debuild -S -sa
 		mv ../glide_* .

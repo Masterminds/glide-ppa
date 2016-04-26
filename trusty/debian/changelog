@@ -1,5 +1,10 @@
-glide (0.10.2) trusty; urgency=low
+glide (0.10.2~trusty) trusty; urgency=low
 
-  * Initial release.
+  * Release 0.10.2~trusty
 
- -- Francisco Guimaraes <francisco.cpg@gmail.com>  Sat, 16 Apr 2016 10:08:44 -0300
+ -- Francisco Guimaraes <francisco.cpg@gmail.com>  Tue, 26 Apr 2016 19:34:55 -0300
+
+glide (0) UNRELEASED; urgency=low
+
+
+ -- Francisco Guimaraes <francisco.cpg@gmail.com>  Tue, 26 Apr 2016 17:52:43 -0300
