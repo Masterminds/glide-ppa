@@ -5,5 +5,5 @@ clear
 . bin/env
 
 for dist in $DISTS; do
-	dput ppa:masterminds/glide "$dist/glide_$VERSION_NUMBER_source.changes"
+	dput ppa:masterminds/glide "$dist/glide_${VERSION_NUMBER}_source.changes"
 done
