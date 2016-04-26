@@ -1,7 +1,9 @@
 # glide-ppa
-## Pre requisites
+## Prerequisites
 ### First of all, you need a ubuntu box. You can get one, for example, with vagrant  
-`vagrant init ubuntu/trusty64; vagrant up --provider virtualbox`
+`vagrant init ubuntu/trusty64; vagrant up --provider virtualbox`  
+
+Then
 
 1. Generate a **gpg key** following these [instructions](https://gist.github.com/franciscocpg/1575d286548034113884c3185ca88681)
 2. List the generated key
@@ -58,3 +60,12 @@ export GOPATH="$HOME/go"
 export PATH=${PATH}:$GOPATH/bin
 ```
 13.  Don't forget to run `source ~/.bashrc`or to restart your terminal 
+
+## Running
+With all set do the following steps:
+1. Run the above command to keep your gpg key cached for 600 seconds in your current session (according to this [doc](https://www.gnupg.org/documentation/manuals/gnupg/Agent-Options.html))
+
+ ```
+eval $(gpg-agent --daemon)
+```
+2. Run `make dist`. If everything is fine this is going to build and dist for every distribution informed at the [env](bin/env) file.
