@@ -1,4 +1,4 @@
-DISTS="wily"
+DISTS="precise trusty wily"
 VERSION_FILE=".version"
 VERSION_NUMBER=$(cat $VERSION_FILE || echo "0") 
 
