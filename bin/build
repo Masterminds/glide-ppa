@@ -30,7 +30,7 @@ build() {
 	if [[ "$VERSION" == "$VERSION_NUMBER" ]]; then
 		fail "Version $VERSION must be different than current version $VERSION_NUMBER"
 	fi
-	git fetch origin ${VERSION}:${VERSION}
+	# git fetch origin ${VERSION}:${VERSION}
 	git checkout ${VERSION}
 	git rev-parse --abbrev-ref HEAD
 	echo "Getting needed packages..."
