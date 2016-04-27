@@ -45,6 +45,8 @@ copy() {
 		cd $dist/debian
 		mkdir -p i386
 		mkdir -p amd64
+		# This folder is used at $dist/debian/rules
+		mkdir -p release
 		cp $SRC/dist/linux-386/glide i386/
 		cp $SRC/dist/linux-amd64/glide amd64/
 		cd ..

@@ -1,4 +1,11 @@
+#!/bin/bash
+clear
+
+# source env
+. bin/env
 set -e
-cd glide
-pbuilder-dist trusty build ../glide_0.10.2.dsc
-cd -
+for dist in $DISTS; do
+	cd $dist
+	pbuilder-dist $dist build glide_$VERSION_NUMBER~$dist.dsc
+	cd ..
+done

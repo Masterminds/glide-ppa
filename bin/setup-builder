@@ -1,0 +1,7 @@
+RELEASE="$1"
+if [[ -z "$RELEASE" ]]; then
+	echo "Must inform the release to setup"
+	exit 1
+fi
+
+pbuilder-dist $RELEASE create
