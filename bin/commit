@@ -1,0 +1,11 @@
+#!/bin/bash
+clear
+
+# source env
+. bin/env
+
+set -e
+
+git add .
+git commit -m "Release ${VERSION_NUMBER}"
+git push

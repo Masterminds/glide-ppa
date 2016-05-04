@@ -9,7 +9,3 @@ set -e
 for dist in $DISTS; do
 	dput ppa:masterminds/glide "$dist/glide_${VERSION_NUMBER}~${dist}_source.changes"
 done
-
-git add .
-git commit -m "Release ${VERSION_NUMBER}"
-git push
