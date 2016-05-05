@@ -9,3 +9,4 @@ clean:
 
 dist: build
 	bin/dist
+	bin/commit
