@@ -1,6 +1,6 @@
 # glide-ppa
 ## Prerequisites
-### First of all, you need a ubuntu box. You can get one, for example, with vagrant  
+### First of all, you need an ubuntu box. You can get one, for example, with vagrant  
 `vagrant init ubuntu/trusty64; vagrant up --provider virtualbox`  
 
 Then
