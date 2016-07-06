@@ -1,8 +1,9 @@
 #!/bin/bash
 clear
 # Deps
-SRC="$GOPATH/src/github.com/Masterminds/glide"
 DEP_PKGS="github.com/codegangsta/cli github.com/Masterminds/semver github.com/Masterminds/vcs gopkg.in/yaml.v2"
+SRC="$GOPATH/src/github.com/Masterminds/glide"
+GIT="git@github.com:Masterminds/glide.git"
 
 # source env
 . bin/env
@@ -23,14 +24,13 @@ build() {
 		git checkout master
 		git pull --all
 	else
-		git clone git@github.com:franciscocpg/glide.git $SRC
+		git clone "$GIT" $SRC
 		cd $SRC
 	fi
 	VERSION=$(git describe --abbrev=0 --tags)
 	if [[ "$VERSION" == "$VERSION_NUMBER" ]]; then
 		fail "Version $VERSION must be different than current version $VERSION_NUMBER"
 	fi
-	git fetch origin ${VERSION}:${VERSION}
 	git checkout ${VERSION}
 	git rev-parse --abbrev-ref HEAD
 	echo "Getting needed packages..."
@@ -41,6 +41,7 @@ build() {
 
 # Copy binaries
 copy() {
+	PPA_VERSION=${VERSION:1}
 	for dist in $DISTS; do
 		cd $dist/debian
 		mkdir -p i386
@@ -50,7 +51,7 @@ copy() {
 		cp $SRC/dist/linux-386/glide i386/
 		cp $SRC/dist/linux-amd64/glide amd64/
 		cd ..
-		dch -v "${VERSION}~$dist" -D "$dist" -u low "Release ${VERSION}~$dist"
+		dch -v "${PPA_VERSION}~$dist" -D "$dist" -u low "Release ${VERSION}~$dist"
 		rm -f glide_*
 		debuild -S -sa
 		mv ../glide_* .

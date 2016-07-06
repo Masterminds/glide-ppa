@@ -7,5 +7,5 @@ clear
 set -e
 
 for dist in $DISTS; do
-	dput ppa:masterminds/glide "$dist/glide_${VERSION_NUMBER}~${dist}_source.changes"
+	dput ppa:masterminds/glide "$dist/glide_${PPA_VERSION_NUMBER}~${dist}_source.changes"
 done
