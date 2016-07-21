@@ -1,6 +1,7 @@
 DISTS="precise trusty wily xenial"
 VERSION_FILE=".version"
 VERSION_NUMBER=$(cat $VERSION_FILE || echo "0") 
+PPA_VERSION_NUMBER=${VERSION_NUMBER:1}
 
 fail() {
 	echo "$1"
