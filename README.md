@@ -5,7 +5,7 @@
 
 Then
 
-1. Generate a **gpg key** following these [instructions](https://gist.github.com/franciscocpg/1575d286548034113884c3185ca88681)
+1. Generate a **gpg key** following these [instructions](GPG-KEY-INSTRUCTIONS.md)
 2. List the generated key
 
  ```
