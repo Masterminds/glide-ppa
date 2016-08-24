@@ -1,4 +1,4 @@
-DISTS="precise trusty wily xenial"
+DISTS="precise trusty xenial"
 VERSION_FILE=".version"
 VERSION_NUMBER=$(cat $VERSION_FILE || echo "0") 
 PPA_VERSION_NUMBER=${VERSION_NUMBER:1}

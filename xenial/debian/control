@@ -10,6 +10,4 @@ Vcs-Browser: https://github.com/Masterminds/glide
 
 Package: glide
 Architecture: i386 amd64
-Description: Aside from being catchy, "glide" is a contraction of "Go Elide". The idea is
- to compress the tasks that normally take us lots of time into a just a few
- seconds.
+Description: glide - Package Management for Golang
