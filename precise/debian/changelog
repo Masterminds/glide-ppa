@@ -1,3 +1,9 @@
+glide (0.12.2~precise) precise; urgency=low
+
+  * Release v0.12.2~precise
+
+ -- Francisco Guimaraes <francisco.cpg@gmail.com>  Tue, 20 Sep 2016 11:15:25 -0300
+
 glide (0.12.1~precise) precise; urgency=low
 
   * Release v0.12.1~precise

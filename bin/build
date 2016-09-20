@@ -21,8 +21,8 @@ getGox() {
 build() {
 	if [[ -d "$SRC" ]]; then
 		cd $SRC
-		git checkout master
-		git pull --all
+		git checkout v0.12.2
+		# git pull --all
 	else
 		git clone "$GIT" $SRC
 		cd $SRC
