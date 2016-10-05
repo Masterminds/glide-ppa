@@ -25,7 +25,6 @@ build() {
 		cd $SRC
 		git checkout master
 		git pull --all
-		git checkout $VERSION
 	else
 		git clone "$GIT" $SRC
 		cd $SRC
