@@ -1,3 +1,9 @@
+glide (0.12.3~trusty) trusty; urgency=low
+
+  * Release v0.12.3~trusty
+
+ -- Francisco Guimaraes <francisco.cpg@gmail.com>  Wed, 05 Oct 2016 08:46:33 -0300
+
 glide (0.12.2~trusty) trusty; urgency=low
 
   * Release v0.12.2~trusty

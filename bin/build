@@ -19,15 +19,17 @@ getGox() {
 
 # Build with gox
 build() {
+	VERSION=$(curl -s https://raw.githubusercontent.com/Masterminds/glide.sh/master/version)
+	echo "Building version $VERSION"
 	if [[ -d "$SRC" ]]; then
 		cd $SRC
 		git checkout master
 		git pull --all
+		git checkout $VERSION
 	else
 		git clone "$GIT" $SRC
 		cd $SRC
 	fi
-	VERSION=$(git describe --abbrev=0 --tags)
 	if [[ "$VERSION" == "$VERSION_NUMBER" ]]; then
 		fail "Version $VERSION must be different than current version $VERSION_NUMBER"
 	fi
