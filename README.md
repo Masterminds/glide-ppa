@@ -19,7 +19,7 @@ sub   2048R/92C63808 2016-04-26
 3. Send key to ubuntu keyserver based on the **pub** id, for the given example
 
  ```
-gpg --send-keys --key hkp://keyserver.ubuntu.com 89E37042
+gpg --send-keys --keyserver hkp://keyserver.ubuntu.com 89E37042
 ```
 4. Get your key fingerprint
 
