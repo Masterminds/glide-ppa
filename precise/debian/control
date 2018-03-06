@@ -9,5 +9,5 @@ Vcs-Git: git://github.com:Masterminds/glide.git
 Vcs-Browser: https://github.com/Masterminds/glide
 
 Package: glide
-Architecture: i386 amd64
+Architecture: i386 amd64 arm64
 Description: glide - Package Management for Golang
