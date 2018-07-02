@@ -60,6 +60,7 @@ copy() {
 	done
 }
 
+set +e
 getGox
 # From here on, we cant get any errors
 set -e
